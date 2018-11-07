@@ -1,7 +1,6 @@
 import pandas
 import numpy as np
 
-""" Gets the lagged difference for each company. """
 def diffCol(col, gvkey, step):
     diff = col.diff(periods=step).to_frame("colRaw")
     diff["gvkeyDiff"] = compustat["gvkey"].diff(periods=step)
